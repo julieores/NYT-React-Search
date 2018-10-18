@@ -5,7 +5,7 @@ const routes = require("./route");
 const app = express();
 const PORT = process.env.PORT || 27017
 
-app.use(body.bodyParsar.urlencoded({ extended: false}));
+app.use(body.bodyParsar.urlencoded({ extended: false }));
 app.use(bodyParsar.json());
 
 app.use(express.statis("client/build"));
@@ -15,7 +15,7 @@ app.use(routes);
 mongoose.Promise = global.Promise
 
 mongoose.connect(
-process.env.MONGODB_URI || "mongodb://localhost/nytreact",
+    process.env.MONGODB_URI || "mongodb://localhost/nytreact",
 
     {
         useMongoClient: true
@@ -23,7 +23,7 @@ process.env.MONGODB_URI || "mongodb://localhost/nytreact",
     }
 );
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 
 });
