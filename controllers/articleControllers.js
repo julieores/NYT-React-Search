@@ -34,7 +34,6 @@ module.exports = {
 
     },
 
-
     remove: function (req, res) {
         db.Article
             .findById({ _id: req.params.id })
